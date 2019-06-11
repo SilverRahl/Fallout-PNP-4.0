@@ -709,3 +709,236 @@
     </table>
 </div>
 
+<div class="sheet-tab-content sheet-tab3">
+    <div class='sheet-2colrow'>
+        <div class='sheet-col'>
+        <h3 style="width:98%">Armor</h3>
+            <table class="sheet-center">
+                <tr>
+                    <td><input type="text" class="sheet-text_left" name="attr_titlearmor_name" value="Armor Name" readonly />&nbsp;<input type="text" class="sheet-text_right" name="attr_armor_name"  /></td>
+                </tr>
+                <tr>
+                    <td>Armor Value (A)</td>
+                    <td><input type="number" class="sheet-number" name="attr_armor_value" value="0" style="width:60px"  /></td>
+                    <td>Stealthiness (G)</td>
+                    <td><input type="number" class="sheet-number" name="attr_stealthiness" placeholder="+5/-5" style="width:60px"  /></td>
+                    <td>Sound Value</td>
+                    <td><input type="number" class="sheet-number" name="attr_sound" placeholder="in hex" style="width:80px"  /></td>
+                    <td>Weight (lbs)</td>
+                    <td><input type="number" class="sheet-number" name="attr_weight" value="0" style="width:80px"  /></td>
+                    <td>Armor Condition</td>
+                    <td><input type="number" class="sheet-number" name="attr_condition" value="0" style="width:60px"  /></td>
+                </tr>
+                <tr>
+                    <td colspan="7"><textarea style="width:96%" name="attr_special_bonuses" placeholder="Special Bonuses"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="7"><textarea style="width:96%" name="attr_armor_note" placeholder="Armor Notes"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="text" class="sheet-text_left" name="attr_titleoutfit_name" value="Outfit Name" readonly />&nbsp;<input type="text" class="sheet-text_right" name="attr_outfit_name"  /></td>
+                    <td>Weight (lbs)</td>
+                    <td><input type="number" class="sheet-number" name="attr_weight" value="0" style="width:80px"  /></td>
+                </tr>
+                <tr>
+                    <td colspan="7"><textarea style="width:96%" name="attr_special_bonuses" placeholder="Special Bonuses"></textarea></td>
+                </tr>
+            </table>
+        </div>
+        <div class='sheet-col'>
+        <h3 style="width:98%">Health</h3>
+            <table class="sheet-center">
+                <tr>
+                    <td>Current Health</td>
+                    <td><input type="number" class="sheet-number" name="attr_current_health" value="0" style="width:80px"  /></td>
+                    <td>Total Health</td>
+                    <td><input type="number" class="sheet-number" name="attr_total_health" value="0" style="width:80px"  /></td>
+                </tr>
+                <tr>
+                    <td>Health Formula</td>
+                    <td><input type="text" class="sheet-number" name="attr_basetext-formula" value="(8+(EN /2)), round up)" readonly style="width:50%" /></td>
+                </tr>
+                <tr>
+                    <td>Wound Points</td>
+                    <td><input name="attr_Checkbox1" value="1" type="checkbox"></td>
+                    <td>Death Points</td>
+                    <td><input name="attr_Checkbox2" value="1" type="checkbox"></td>
+                </tr>    
+                <tr>
+                    <td colspan="5"><textarea style="width:96%" name="attr_wounds_note" placeholder="Wounds Note"></textarea></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <h3 style="width:98%">Weapons</h3>
+    <div class='sheet-2colrow'>
+        <div class='sheet-col'>
+        <h4 style="width:98%">Left Hand</h4>
+            <table class="sheet-center" style="width:100%">
+                <tr>
+                    <td class="sheet-thin">Roll</td>
+                    <td colspan="3">Weapon</td>
+                    <td class="sheet-thin">Range</td>
+                </tr>
+                <tr>
+                    <td><button type='roll' class="sheet-skill_button" name="attr_weapon_roll-left" value='/em @{character_name} rolls attacks with @{weapon_name-left}! Roll of [[1d100]], compared to [[@{weapon_select-left}]], dealing [[(@{weapon_number_dice-left}@{weapon_damage_die-left}) + @{weapon_damage_bonus-left}]] points of damage, if they hit.'></button></td>
+                    <td colspan="3"><input type="text" class="sheet-number" name="attr_weapon_name-left" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_range-left" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Skill</td>
+                    <td class="sheet-thin">Damage Dice</td>
+                    <td class="sheet-thin">Number of Dice</td>
+                    <td class="sheet-thin">Damage Bonus</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><select class ="sheet-select" name="attr_weapon_select-left" value="0" >
+                        <option value="0"> </option>
+                        <option value="@{big_guns}">Big Guns</option>
+                        <option value="@{energy_weapons}">Energy Weapons</option>
+                        <option value="@{melee_weapons}">Melee Weapons</option>
+                        <option value="@{small_guns}">Small Guns</option>
+                        <option value="@{throwing}">Throwing</option>
+                        <option value="@{unarmed}">Unarmed</option></select>
+                    </td>
+                    <td><select class ="sheet-select" name="attr_weapon_damage_die-left" value="0" style="width:60px">
+                        <option value='0'> </option>
+                        <option value='d4'>d4</option>
+                        <option value='d6'>d6</option>
+                        <option value='d8'>d8</option>
+                        <option value='d10'>d10</option>
+                        <option value='d12'>d12</option>
+                        <option value='d20'>d20</option></select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_number_dice-left" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_damage_bonus-left" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="sheet-thin">Single</td>
+                    <td class="sheet-thin">Targeted</td>
+                    <td class="sheet-thin">Burst</td>
+                </tr>
+                <tr>
+                    <td>AP Cost</td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_ap_single-left" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_targeted-left" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_burst-left" /></td>
+                <tr>
+                    <td class="sheet-thin">Ammo</td>
+                    <td class="sheet-thin" colspan="2">Rounds</td>
+                    <td class="sheet-thin">Bullets in Burst</td>
+                    <td class="sheet-thin">+/-</td>
+                </tr>
+                <tr>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_ammo-left" /></td>
+                    <td colspan="2"><input type="number" class="sheet-number" name="attr_weapon_rounds_l-left" />&nbsp;&nbsp;<input type="number" class="sheet-number" name="attr_weapon_rounds_2-left" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_bullets_in_burst-left" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_bullets_in_burst_mod-left" /></td>
+                </tr>
+                <tr>
+                    <td>Condition</td>
+                    <td colspan="4">
+                        <input type="checkbox" name="attr_condition_1-left" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_2-left" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_3-left" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_4-left" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_5-left" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_6-left" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_7-left" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_8-left" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_9-left" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_10-left" value="1" class="sheet-bigcheck"/><span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5"><textarea style="width:96%" name="attr_weapon_note-left" placeholder="Weapon Notes"></textarea></td>
+                </tr>
+            </table>
+        </div>
+        <div class='sheet-col'>
+        <h4 style="width:98%">Right Hand</h4>
+            <table class="sheet-center" style="width:100%">
+                <tr>
+                    <td class="sheet-thin">Roll</td>
+                    <td colspan="3">Weapon</td>
+                    <td class="sheet-thin">Range</td>
+                </tr>
+                <tr>
+                    <td><button class="sheet-skill_button" type='roll' name="attr_weapon_roll-right" value='/em @{character_name} rolls attacks with @{weapon_name-right}! Roll of [[1d100]], compared to [[@{weapon_select-right}]], dealing [[(@{weapon_number_dice-right}@{weapon_damage_die-right}) + @{weapon_damage_bonus-right}]] points of damage, if they hit.'></button></td>
+                    <td colspan="3"><input type="text" class="sheet-number" name="attr_weapon_name-right" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_range-right" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Skill</td>
+                    <td class="sheet-thin">Damage Dice</td>
+                    <td class="sheet-thin">Number of Dice</td>
+                    <td class="sheet-thin">Damage Bonus</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><select class ="sheet-select" name="attr_weapon_select-right" value="0" >
+                        <option value="0"> </option>
+                        <option value="@{big_guns}">Big Guns</option>
+                        <option value="@{energy_weapons}">Energy Weapons</option>
+                        <option value="@{melee_weapons}">Melee Weapons</option>
+                        <option value="@{small_guns}">Small Guns</option>
+                        <option value="@{throwing}">Throwing</option>
+                        <option value="@{unarmed}">Unarmed</option></select>
+                    </td>
+                    <td><select class ="sheet-select" name="attr_weapon_damage_die-right" value="0" style="width:60px">
+                        <option value='0'> </option>
+                        <option value='d4'>d4</option>
+                        <option value='d6'>d6</option>
+                        <option value='d8'>d8</option>
+                        <option value='d10'>d10</option>
+                        <option value='d12'>d12</option>
+                        <option value='d20'>d20</option></select>
+                    </td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_number_dice-right" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_damage_bonus-right" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="sheet-thin">Single</td>
+                    <td class="sheet-thin">Targeted</td>
+                    <td class="sheet-thin">Burst</td>
+                </tr>
+                <tr>
+                    <td>AP Cost</td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_ap_single-right" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_targeted-right" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_burst-right" /></td>
+                <tr>
+                    <td class="sheet-thin">Ammo</td>
+                    <td class="sheet-thin" colspan="2">Rounds</td>
+                    <td class="sheet-thin">Bullets in Burst</td>
+                    <td class="sheet-thin">+/-</td>
+                </tr>
+                <tr>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_ammo-right" /></td>
+                    <td colspan="2"><input type="number" class="sheet-number" name="attr_weapon_rounds_l-right" />&nbsp;&nbsp;<input type="number" class="sheet-number" name="attr_weapon_rounds_2-right" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_bullets_in_burst-right" /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_bullets_in_burst_mod-right" /></td>
+                </tr>
+                <tr>
+                    <td>Condition</td>
+                    <td colspan="4">
+                        <input type="checkbox" name="attr_condition_1-right" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_2-right" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_3-right" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_4-right" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_5-right" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_6-right" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_7-right" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_8-right" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_9-right" value="1" class="sheet-bigcheck"/><span></span>
+                        <input type="checkbox" name="attr_condition_10-right" value="1" class="sheet-bigcheck"/><span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5"><textarea style="width:96%" name="attr_weapon_note-right" placeholder="Weapon Notes"></textarea></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
