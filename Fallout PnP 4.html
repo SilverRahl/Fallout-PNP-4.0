@@ -1,4 +1,4 @@
-<h5>Fallout D10 PnP</h5>
+<h5>Fallout PnP 4.0</h5>
 <input type="radio" name="attr_tab" class="sheet-tab sheet-tab1" value="1" title="Main" checked="checked" />
 <input type="radio" name="attr_tab" class="sheet-tab sheet-tab2" value="2" title="Skills" />
 <input type="radio" name="attr_tab" class="sheet-tab sheet-tab3" value="3" title="Combat" />
@@ -29,7 +29,7 @@
     <input type="text" class="sheet-text_center" name="attr_title_character_appearance" value="Appearance" style="width:98%" readonly />
     <textarea name="attr_appearance" style="width:97%" ></textarea>
     <br>
-    <h3 style="width:98%">Attributes</h3>
+    <h3 style="width:98%">SPECIAL</h3>
     <table class="sheet-center">
         <tr>
             <td>S.P.E.C.I.A.L.</td>
@@ -40,66 +40,65 @@
         </tr>
         <tr>
             <td>Strength (ST)</td>
-            <td><input type="number" class="sheet-number" name="attr_strength" value='@{strength_bonus} + @{strength_point}' disabled="true"/></td>
+            <td><input type="number" class="sheet-number" name="attr_strength" value='@{strength_bonus} + @{strength_base}' disabled="true"/></td>
             <td><input type="number" class="sheet-number" name="attr_strength_bonus" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_strength_base" value="" /></td>
+            <td><input type="number" class="sheet-number" name="attr_strength_base" value="1" /></td>
             <td><input type="number" class="sheet-number" name="attr_strength_racial_max" value="" /></td>
         </tr>
         <tr>
             <td>Perception (PE)</td>
-            <td><input type="number" class="sheet-number" name="attr_perception" value='@{perception_bonus} + @{perception_point}' disabled="true"/></td>
+            <td><input type="number" class="sheet-number" name="attr_perception" value='@{perception_bonus} + @{perception_base}' disabled="true"/></td>
             <td><input type="number" class="sheet-number" name="attr_perception_bonus" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_perception_base" value="" /></td>
+            <td><input type="number" class="sheet-number" name="attr_perception_base" value="1" /></td>
             <td><input type="number" class="sheet-number" name="attr_perception_racial_max" value="" /></td>
         </tr>
         <tr>
             <td>Endurance (EN)</td>
-            <td><input type="number" class="sheet-number" name="attr_endurance" value='@{endurance_bonus} + @{endurance_point}' disabled="true"/></td>
+            <td><input type="number" class="sheet-number" name="attr_endurance" value='@{endurance_bonus} + @{endurance_base}' disabled="true"/></td>
             <td><input type="number" class="sheet-number" name="attr_endurance_bonus" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_endurance_base" value="" /></td>
+            <td><input type="number" class="sheet-number" name="attr_endurance_base" value="1" /></td>
             <td><input type="number" class="sheet-number" name="attr_endurance_racial_max" value="" /></td>
         </tr>
         <tr>
             <td>Charisma (CH)</td>
-            <td><input type="number" class="sheet-number" name="attr_charisma" value='@{charisma_bonus} + @{charisma_point}' disabled="true"/></td>
+            <td><input type="number" class="sheet-number" name="attr_charisma" value='@{charisma_bonus} + @{charisma_base}' disabled="true"/></td>
             <td><input type="number" class="sheet-number" name="attr_charisma_bonus" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_charisma_base" value="" /></td>
+            <td><input type="number" class="sheet-number" name="attr_charisma_base" value="1" /></td>
             <td><input type="number" class="sheet-number" name="attr_charisma_racial_max" value="" /></td>
         </tr>
         <tr>
             <td>Intelligence (IN)</td>
-            <td><input type="number" class="sheet-number" name="attr_intelligence" value='@{intelligence_bonus} + @{intelligence_point}' disabled="true"/></td>
+            <td><input type="number" class="sheet-number" name="attr_intelligence" value='@{intelligence_bonus} + @{intelligence_base}' disabled="true"/></td>
             <td><input type="number" class="sheet-number" name="attr_intelligence_bonus" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_intelligence_base" value="" /></td>
+            <td><input type="number" class="sheet-number" name="attr_intelligence_base" value="1" /></td>
             <td><input type="number" class="sheet-number" name="attr_intelligence_racial_max" value="" /></td>
         </tr>
         <tr>
             <td>Agility (AG)</td>
-            <td><input type="number" class="sheet-number" name="attr_agility" value='@{agility_bonus} + @{agility_point}' disabled="true"/></td>
+            <td><input type="number" class="sheet-number" name="attr_agility" value='@{agility_bonus} + @{agility_base}' disabled="true"/></td>
             <td><input type="number" class="sheet-number" name="attr_agility_bonus" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_agility_base" value="" /></td>
+            <td><input type="number" class="sheet-number" name="attr_agility_base" value="1" /></td>
             <td><input type="number" class="sheet-number" name="attr_agility_racial_max" value="" /></td>
         </tr>
         <tr>
             <td>Luck (LU)</td>
-            <td><input type="number" class="sheet-number" name="attr_luck" value='@{luck_bonus} + @{luck_point}' disabled="true"/></td>
+            <td><input type="number" class="sheet-number" name="attr_luck" value='@{luck_bonus} + @{luck_base}' disabled="true"/></td>
             <td><input type="number" class="sheet-number" name="attr_luck_bonus" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_luck_base" value="" /></td>
+            <td><input type="number" class="sheet-number" name="attr_luck_base" value="1" /></td>
             <td><input type="number" class="sheet-number" name="attr_luck_racial_max" value="" /></td>
         </tr>
+    </table>
         <br>
         <h3 style="width:98%">Traits</h3>
     <table class="sheet-center">
         <tr>
-            <td><input type="text" class="sheet-text_left" name="attr_titletrait_name" value="Trait Name" readonly />&nbsp;<input type="text" class="sheet-text_right" name="attr_trait_name"  /></td>
-            <textarea name="attr_trait_name" style="width:97%" ></textarea>
+            <td><input type="text" class="sheet-text_left" name="attr_titletrait1" placeholder="Trait 1" style="width:40%" />&nbsp;<input type="text" class="sheet-text_right" name="attr_trait1" style="width:60%" /></td>
         </tr>
         <tr>
-            <td><input type="text" class="sheet-text_left" name="attr_titletrait_name" value="Trait Name" readonly />&nbsp;<input type="text" class="sheet-text_right" name="attr_trait_name"  /></td>
-            <textarea name="attr_trait_name" style="width:97%" ></textarea>
+            <td><input type="text" class="sheet-text_left" name="attr_titletrait2" placeholder="Trait 2" style="width:40%" />&nbsp;<input type="text" class="sheet-text_right" name="attr_trait2" style="width:60%" /></td>
         </tr>
-        <br>
     </table>
+    <br>
     <h3 style="width:98%">Secondary Statistics</h3>
     <table class="sheet-center">
         <tr>
@@ -112,78 +111,78 @@
             <td>Sequence</td>
             <td><input type="number" class="sheet-number" name="attr_sequence" value='@{bonus-sequence} + @{base-sequence}' disabled="true"/></td>
             <td><input type="number" class="sheet-number" name="attr_bonus-sequence" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_base-sequence" value='(floor(@{agility}))' disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-sequence" value="AG" readonly /></td>
+            <td><input type="number" class="sheet-number" name="attr_base-sequence" value='(@{agility})' disabled="true" /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-sequence" value="AG" readonly style="width:70%" /></td>
         </tr>
         <tr>
             <td>Carry Weight</td>
             <td><input type="number" class="sheet-number" name="attr_carry_weight" value='@{bonus-carry_weight} + @{base-carry_weight}' disabled="true"/></td>
-            <td><input type="number" class="sheet-number"name="attr_bonus-carry_weight" value="0" /></td>
+            <td><input type="number" class="sheet-number" name="attr_bonus-carry_weight" value="0" /></td>
             <td><input type="number" class="sheet-number" name="attr_base-carry_weight" value='(25 + (@{strength_bonus} + @{strength_base})*20)' disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-carry_weight" value="(25 + (ST x20)); 1 lb (Pound) = 0.45 kg" readonly /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-carry_weight" value="(25 + (ST x20)); 1 lb (Pound) = 0.45 kg" readonly style="width:70%" /></td>
         </tr>
         <tr>
             <td>Healing Rate</td>
             <td><input type="number" class="sheet-number" name="attr_healing_rate" value='@{bonus-healing_rate} + @{base-healing_rate}' disabled="true"/></td>
-            <td><input type="number" class="sheet-number"name="attr_bonus-healing_rate" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_base-healing_rate" value='floor(@{endurance}/3)' disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-healing_rate" value="(EN/3, round up)" readonly /></td>
-        </tr>
-        <tr>
-            <td>Implant Endurance (IE)</td>
-            <td><input type="number" class="sheet-number" name="attr_implant_endurance" value='@{bonus-implant_endurance} + @{base-implant_endurance}' disabled="true"/></td>
-            <td><input type="number" class="sheet-number"name="attr_bonus-implant_endurance" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_base-implant_endurance" value="((@{endurance} + @{intelligence})*10)" disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-implant_endurance" value="(10x (EN + IN))" readonly /></td>
+            <td><input type="number" class="sheet-number" name="attr_bonus-healing_rate" value="0" /></td>
+            <td><input type="number" class="sheet-number" name="attr_base-healing_rate" value='(ceil(@{endurance}/3))' disabled="true" /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-healing_rate" value="(EN/3, round up)" readonly style="width:70%" /></td>
         </tr>
         <tr>
             <td>Poison Resistance</td>
             <td><input type="number" class="sheet-number" name="attr_poison_resistance" value='@{bonus-poison_resistance} + @{base-poison_resistance}' disabled="true"/></td>
-            <td><input type="number" class="sheet-number"name="attr_bonus-poison_resistance" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_base-poison_resistance" value="floor(@{endurance}/2)" disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-poison_resistance" value="(EN / 2, round down)" readonly /></td>
+            <td><input type="number" class="sheet-number" name="attr_bonus-poison_resistance" value="0" /></td>
+            <td><input type="number" class="sheet-number" name="attr_base-poison_resistance" value="(floor(@{endurance}/2))" disabled="true" /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-poison_resistance" value="(EN / 2, round down)" readonly style="width:70%" /></td>
         </tr>
         <tr>
             <td>Electricity Resistance</td>
             <td><input type="number" class="sheet-number" name="attr_electricity_resistance" value='@{bonus-electricity_resistance} + @{base-electricity_resistance}' disabled="true"/></td>
-            <td><input type="number" class="sheet-number"name="attr_bonus-electricity_resistance" value="0" /></td>
+            <td><input type="number" class="sheet-number" name="attr_bonus-electricity_resistance" value="0" /></td>
             <td><input type="number" class="sheet-number" name="attr_base-electricity_resistance" value='0' disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-electricity_resistance" value="Depends on armor and other bonuses" readonly /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-electricity_resistance" value="Depends on armor and other bonuses" readonly style="width:70%" /></td>
         </tr>
         <tr>
             <td>Gas Resistance</td>
             <td><input type="number" class="sheet-number" name="attr_gas_resistance" value='@{bonus-gas_resistance} + @{base-gas_resistance}' disabled="true"/></td>
-            <td><input type="number" class="sheet-number"name="attr_bonus-gas_resistance" value="0" /></td>
+            <td><input type="number" class="sheet-number" name="attr_bonus-gas_resistance" value="0" /></td>
             <td><input type="number" class="sheet-number" name="attr_base-gas_resistance" value='0' disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-gas_resistance" value="Depends on armor and other bonuses" readonly /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-gas_resistance" value="Depends on armor and other bonuses" readonly style="width:70%" /></td>
         </tr>
         <tr>
             <td>Radiation Resistance</td>
             <td><input type="number" class="sheet-number" name="attr_radiation_resistance" value='@{bonus-radiation_resistance} + @{base-radiation_resistance}' disabled="true"/></td>
-            <td><input type="number" class="sheet-number"name="attr_bonus-radiation_resistance" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_base-radiation_resistance" value='(@{endurance}/2)' disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-radiation_resistance" value="(EN /2, round down)" readonly /></td>
+            <td><input type="number" class="sheet-number" name="attr_bonus-radiation_resistance" value="0" /></td>
+            <td><input type="number" class="sheet-number" name="attr_base-radiation_resistance" value='(floor(@{endurance}/2))' disabled="true" /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-radiation_resistance" value="(EN /2, round down)" readonly style="width:70%" /></td>
+        </tr>
+        <tr>
+            <td>Implant Endurance (IE)</td>
+            <td><input type="number" class="sheet-number" name="attr_implant_endurance" value='@{bonus-implant_endurance} + @{base-implant_endurance}' disabled="true"/></td>
+            <td><input type="number" class="sheet-number" name="attr_bonus-implant_endurance" value="0" /></td>
+            <td><input type="number" class="sheet-number" name="attr_base-implant_endurance" value="((@{endurance} + @{intelligence})*10)" disabled="true" /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-implant_endurance" value="(10 x (EN + IN))" readonly style="width:70%" /></td>
         </tr>
         <tr>
             <td>Walking Rate</td>
             <td><input type="number" class="sheet-number" name="attr_walking_rate" value='@{bonus-walking_rate} + @{base-walking_rate}' disabled="true"/></td>
-            <td><input type="number" class="sheet-number"name="attr_bonus-walking_rate" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_base-walking_rate" value='(@{agility}/2)' disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-walking_rate" value="(AG /2, round up)" readonly /></td>
+            <td><input type="number" class="sheet-number" name="attr_bonus-walking_rate" value="0" /></td>
+            <td><input type="number" class="sheet-number" name="attr_base-walking_rate" value='(floor(@{agility}/2))' disabled="true" /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-walking_rate" value="(AG /2, round up)" readonly style="width:70%" /></td>
         </tr>
         <tr>
             <td>Running Rate</td>
             <td><input type="number" class="sheet-number" name="attr_running_rate" value='@{bonus-running_rate} + @{base-running_rate}' disabled="true"/></td>
-            <td><input type="number" class="sheet-number"name="attr_bonus-running_rate" value="0" /></td>
+            <td><input type="number" class="sheet-number" name="attr_bonus-running_rate" value="0" /></td>
             <td><input type="number" class="sheet-number" name="attr_base-running_rate" value='(@{strength})' disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-running_rate" value="(ST; base running rate: 1 hex + successes)" readonly /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-running_rate" value="(ST; base running rate: 1 hex + successes)" readonly style="width:70%" /></td>
         </tr>
         <tr>
-            <td>Sprint Increase</td>
-            <td><input type="number" class="sheet-number" name="attr_sprint_increase" value='@{bonus-sprint_increase} + @{base-sprint_increase}' disabled="true"/></td>
-            <td><input type="number" class="sheet-number"name="attr_bonus-sprint_increase" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_base-sprint_increase" value='(@{endurance})' disabled="true" /></td>
-            <td><input type="text"   class="sheet-number" name="attr_basetext-sprint_increase" value="(EN; +1 hex movement per success)" readonly /></td>
+            <td>Sprint Rate</td>
+            <td><input type="number" class="sheet-number" name="attr_sprint_rate" value='@{bonus-sprint_rate} + @{base-sprint_rate}' disabled="true"/></td>
+            <td><input type="number" class="sheet-number" name="attr_bonus-sprint_rate" value="0" /></td>
+            <td><input type="number" class="sheet-number" name="attr_base-sprint_rate" value='(@{endurance})' disabled="true" /></td>
+            <td><input type="text"   class="sheet-number" name="attr_basetext-sprint_rate" value="(EN; +1 hex running rate bonus per success)" readonly style="width:70%" /></td>
         </tr>
     </table>
     <br>
