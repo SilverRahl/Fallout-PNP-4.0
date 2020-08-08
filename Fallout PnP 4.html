@@ -132,7 +132,7 @@
             <td>Poison Resistance</td>
             <td><input type="number" class="sheet-number" name="attr_poison_resistance" value='@{bonus-poison_resistance} + @{base-poison_resistance}' disabled="true"/></td>
             <td><input type="number" class="sheet-number" name="attr_bonus-poison_resistance" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_base-poison_resistance" value="(floor(@{endurance}/2))" disabled="true" /></td>
+            <td><input type="number" class="sheet-number" name="attr_base-poison_resistance" value='(floor(@{endurance}/2))' disabled="true" /></td>
             <td><input type="text"   class="sheet-number" name="attr_basetext-poison_resistance" value="(EN / 2, round down)" readonly style="width:70%" /></td>
         </tr>
         <tr>
@@ -160,7 +160,7 @@
             <td>Implant Endurance (IE)</td>
             <td><input type="number" class="sheet-number" name="attr_implant_endurance" value='@{bonus-implant_endurance} + @{base-implant_endurance}' disabled="true"/></td>
             <td><input type="number" class="sheet-number" name="attr_bonus-implant_endurance" value="0" /></td>
-            <td><input type="number" class="sheet-number" name="attr_base-implant_endurance" value="((@{endurance} + @{intelligence})*10)" disabled="true" /></td>
+            <td><input type="number" class="sheet-number" name="attr_base-implant_endurance" value='((@{endurance} + @{intelligence})*10)' disabled="true" /></td>
             <td><input type="text"   class="sheet-number" name="attr_basetext-implant_endurance" value="(10 x (EN + IN))" readonly style="width:70%" /></td>
         </tr>
         <tr>
@@ -706,43 +706,6 @@
 <div class="sheet-tab-content sheet-tab3">
     <div class='sheet-2colrow'>
         <div class='sheet-col'>
-        <h3 style="width:98%">Armor</h3>
-            <table class="sheet-center">
-                <tr>
-                    <td><input type="text" class="sheet-text_left" name="attr_titlearmor_name" value="Armor Name" readonly />&nbsp;<input type="text" class="sheet-text_right" name="attr_armor_name"  /></td>
-                </tr>
-                <tr>
-                    <td>Armor Value (A)</td>
-                    <td><input type="number" class="sheet-number" name="attr_armor_value" value="0" style="width:60px"  /></td>
-                    <td>Stealthiness (G)</td>
-                    <td><input type="number" class="sheet-number" name="attr_stealthiness" placeholder="+5/-5" style="width:60px"  /></td>
-                    <td>Sound</td>
-                    <td><input type="number" class="sheet-number" name="attr_sound" placeholder="in hex" style="width:80px"  /></td>
-                    <td>Weight</td>
-                    <td><input type="number" class="sheet-number" name="attr_weight" value="0" style="width:80px"  /></td>
-                    <td>Condition</td>
-                    <td><input type="number" class="sheet-number" name="attr_condition" value="0" style="width:60px"  /></td>
-                </tr>
-                <tr>
-                    <td colspan="7"><textarea style="width:96%" name="attr_special_bonuses" placeholder="Special Bonuses"></textarea></td>
-                </tr>
-                <tr>
-                    <td colspan="7"><textarea style="width:96%" name="attr_armor_note" placeholder="Armor Notes"></textarea></td>
-                </tr>
-                <tr>
-                    <td>Outfit Name</td>
-                    <td>Weight</td>
-                    <td>Special Bonuses</td>
-                </tr>
-                <tr>
-                    <td><input type="text" class="sheet-text_left" name="attr_titleoutfit_name" value="Outfit Name" readonly />&nbsp;<input type="text" class="sheet-text_right" name="attr_outfit_name"  /></td>
-                    <td><input type="number" class="sheet-number" name="attr_weight" value="0" style="width:80px"  /></td>
-                    <td colspan="7"><textarea style="width:96%" name="attr_special_bonuses" placeholder="Special Bonuses"></textarea></td>
-                </tr>
-            </table>
-        </div>
-        <br>
-        <div class='sheet-col'>
         <h3 style="width:98%">Health</h3>
             <table class="sheet-center">
                 <tr>
@@ -750,174 +713,188 @@
                     <td>Current Health</td>
                     <td>Total Health</td>
                     <td>Formula</td>
+                    <td>Wound Points</td>
+                    <td>Death Points</td>
                 </tr>
                 <tr>
                     <td><input type="number" class="sheet-number" name="attr_rad_damage" value="0" style="width:50px"  /></td>
                     <td><input type="number" class="sheet-number" name="attr_current_health" value="0" style="width:50px"  /></td>
                     <td><input type="number" class="sheet-number" name="attr_total_health" value="0" style="width:50px"  /></td>
-                    <td><input type="text" class="sheet-number" name="attr_basetext-formula" value="(8+(EN /2)), round up)" readonly style="width:70%" /></td>
-                </tr>
-                <tr>
-                    <td>Wound Points</td>
+                    <td><input type="text" class="sheet-number" name="attr_basetext-formula" value="((EN / 2) + 8), round up)" readonly style="width:80%" /></td>
                     <input type="checkbox" name="attr_wound_1" value="1" class="sheet-bigcheck"/><span></span>
                     <input type="checkbox" name="attr_wound_2" value="1" class="sheet-bigcheck"/><span></span>
                     <input type="checkbox" name="attr_wound_3" value="1" class="sheet-bigcheck"/><span></span>
-                    <td>Death Points</td>
                     <input type="checkbox" name="attr_death_1" value="1" class="sheet-bigcheck"/><span></span>
                     <input type="checkbox" name="attr_death_2" value="1" class="sheet-bigcheck"/><span></span>
                 </tr>
             </table>
         </div>
-    </div>
-    <br>
-    <h3 style="width:98%">Weapons</h3>
-    <div class='sheet-2colrow'>
+        <br>
         <div class='sheet-col'>
+        <h3 style="width:98%">Armor and Weapons</h3>
+            <table class="sheet-center">
+                <tr>
+                    <td><input type="text" class="sheet-text" name="attr_titlearmor_name" placeholder="Armor Name" </td>
+                </tr>
+                <tr>
+                    <td>Armor Value (A)</td>
+                    <td><input type="number" class="sheet-number" name="attr_armor_value" value="0" /></td>
+                    <td>Stealthiness (G)</td>
+                    <td><input type="number" class="sheet-number" name="attr_stealthiness" placeholder="+5/-5" /></td>
+                    <td>Sound</td>
+                    <td><input type="number" class="sheet-number" name="attr_sound" value="" /></td>
+                    <td>Weight</td>
+                    <td><input type="number" class="sheet-number" name="attr_armor_weight" value="0" /></td>
+                    <td>Condition</td>
+                    <td><input type="number" class="sheet-number" name="attr_condition" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="7"><textarea style="width:98%" name="attr_special_bonuses1" placeholder="Special Bonuses"></textarea></td>
+                    <td colspan="7"><textarea style="width:98%" name="attr_armor_note" placeholder="Armor Notes"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Outfit Name</td>
+                    <td><input type="text" class="sheet-text" name="attr_outfit_name" readonly/></td>
+                    <td>Weight</td>
+                    <td><input type="number" class="sheet-number" name="attr_outfit_weight" value="0" /></td>
+                </tr>
+                <tr>
+                    <td colspan="7"><textarea style="width:98%" name="attr_special_bonuses2" placeholder="Special Bonuses"></textarea></td>
+                </tr>
+            </table>
+            <br>
             <table>
                 <tr>
-                    <td>Weapon Name</td>
-                    <td><input type="number" class="sheet-number" name="attr_weapon_name" value="" style="width:90%"  /></td>
+                    <td>First Weapon Name</td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_name1" value="" style="width:90%" /></td>
                 </tr>
                 <tr>
                     <td>Damage Value (H)</td>
-                    <td><input type="number" class="sheet-number" name="attr_damage_value" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_damage_value1" value="" /></td>
                     <td>Fire Mod</td>
-                    <td><input type="number" class="sheet-number" name="attr_fire_mod" value="" style="width:80px"  /></td>
+                    <td><input type="text" class="sheet-number" name="attr_fire_mod1" value="" style="width:80px" /></td>
                     <td>Armor Penetration (AP)</td>
-                    <td><input type="number" class="sheet-number" name="attr_armor_penetration" value="0" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_armor_penetration1" value="0" /></td>
                     <td>Reach</td>
-                    <td><input type="number" class="sheet-number" name="attr_reach" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_reach1" value="" /></td>
                     <td>ST Minimum</td>
-                    <td><input type="number" class="sheet-number" name="attr_minimum" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_minimum1" value="" /></td>
                     <td>Weight</td>
-                    <td><input type="number" class="sheet-number" name="attr_weight" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weight1" value="" /></td>
                 </tr>
                 <tr>
                     <td>Ammo Type</td>
-                    <td><input type="number" class="sheet-number" name="attr_ammo_type" value="" style="width:70px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_ammo_type1" value="" style="width:90px"  /></td>
                     <td>Ammo Quantity</td>
-                    <td><input type="number" class="sheet-number" name="attr_ammo_quantity" value="" style="width:50px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_ammo_quantity1" value="" /></td>
                 </tr>
-                <h4 style="width:50%">Range</h4>
-                <table class="sheet-center">
-                    <tr>
-                        <td>Short (0)</td>
-                        <td><input type="number" class="sheet-number" name="attr_short" value="0" style="width:50px"  /></td>
-                        <td>Medium (-1)</td>
-                        <td><input type="number" class="sheet-number" name="attr_medium" value="0" style="width:50px"  /></td>
-                    </tr>
-                    <tr>
-                        <td>Long (-3)</td>
-                        <td><input type="number" class="sheet-number" name="attr_long" value="0" style="width:50px"  /></td>
-                        <td>Extreme (-6)</td>
-                        <td><input type="number" class="sheet-number" name="attr_extreme" value="0" style="width:50px"  /></td>
-                    </tr>    
+                <tr>
+                    <td>Short Range (0)</td>
+                    <td><input type="number" class="sheet-number" name="attr_short1" value="0" /></td>
+                    <td>Medium Range (-1)</td>
+                    <td><input type="number" class="sheet-number" name="attr_medium1" value="0" /></td>
+                    <td>Long Range (-3)</td>
+                    <td><input type="number" class="sheet-number" name="attr_long1" value="0" /></td>
+                    <td>Extreme Range (-6)</td>
+                    <td><input type="number" class="sheet-number" name="attr_extreme1" value="0" /></td>
+                </tr>  
                 </table>
             </table>
             <br>
             <table>
                 <tr>
-                    <td>Weapon Name</td>
-                    <td><input type="number" class="sheet-number" name="attr_weapon_name" value="" style="width:90%"  /></td>
+                    <td>Second Weapon Name</td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_name2" value="" style="width:90%"  /></td>
                 </tr>
                 <tr>
                     <td>Damage Value (H)</td>
-                    <td><input type="number" class="sheet-number" name="attr_damage_value" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_damage_value2" value="" /></td>
                     <td>Fire Mod</td>
-                    <td><input type="number" class="sheet-number" name="attr_fire_mod" value="" style="width:80px"  /></td>
+                    <td><input type="text" class="sheet-number" name="attr_fire_mod2" value="" style="width:80px"  /></td>
                     <td>Armor Penetration (AP)</td>
-                    <td><input type="number" class="sheet-number" name="attr_armor_penetration" value="0" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_armor_penetration2" value="0" /></td>
                     <td>Reach</td>
-                    <td><input type="number" class="sheet-number" name="attr_reach" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_reach2" value="" /></td>
                     <td>ST Minimum</td>
-                    <td><input type="number" class="sheet-number" name="attr_minimum" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_minimum2" value="" /></td>
                     <td>Weight</td>
-                    <td><input type="number" class="sheet-number" name="attr_weight" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weight2" value="" /></td>
                 </tr>
                 <tr>
                     <td>Ammo Type</td>
-                    <td><input type="number" class="sheet-number" name="attr_ammo_type" value="" style="width:70px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_ammo_type2" value="" style="width:90px"  /></td>
                     <td>Ammo Quantity</td>
-                    <td><input type="number" class="sheet-number" name="attr_ammo_quantity" value="" style="width:50px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_ammo_quantity2" value="" /></td>
                 </tr>
-                <h4 style="width:50%">Range</h4>
-                <table class="sheet-center">
-                    <tr>
-                        <td>Short (0)</td>
-                        <td><input type="number" class="sheet-number" name="attr_short" value="0" style="width:50px"  /></td>
-                        <td>Medium (-1)</td>
-                        <td><input type="number" class="sheet-number" name="attr_medium" value="0" style="width:50px"  /></td>
-                    </tr>
-                    <tr>
-                        <td>Long (-3)</td>
-                        <td><input type="number" class="sheet-number" name="attr_long" value="0" style="width:50px"  /></td>
-                        <td>Extreme (-6)</td>
-                        <td><input type="number" class="sheet-number" name="attr_extreme" value="0" style="width:50px"  /></td>
-                    </tr>    
+                <tr>
+                    <td>Short Range (0)</td>
+                    <td><input type="number" class="sheet-number" name="attr_short2" value="0" /></td>
+                    <td>Medium Range (-1)</td>
+                    <td><input type="number" class="sheet-number" name="attr_medium2" value="0" /></td>
+                    <td>Long Range (-3)</td>
+                    <td><input type="number" class="sheet-number" name="attr_long2" value="0" /></td>
+                    <td>Extreme Range (-6)</td>
+                    <td><input type="number" class="sheet-number" name="attr_extreme2" value="0" /></td>
+                </tr>    
                 </table>
             </table>
             <br>
             <table>
                 <tr>
-                    <td>Weapon Name</td>
-                    <td><input type="number" class="sheet-number" name="attr_weapon_name" value="" style="width:90%"  /></td>
+                    <td>Third Weapon Name</td>
+                    <td><input type="number" class="sheet-number" name="attr_weapon_name3" value="" style="width:90%"  /></td>
                 </tr>
                 <tr>
                     <td>Damage Value (H)</td>
-                    <td><input type="number" class="sheet-number" name="attr_damage_value" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_damage_value3" value="" /></td>
                     <td>Fire Mod</td>
-                    <td><input type="number" class="sheet-number" name="attr_fire_mod" value="" style="width:80px"  /></td>
+                    <td><input type="text" class="sheet-number" name="attr_fire_mod3" value="" style="width:80px"  /></td>
                     <td>Armor Penetration (AP)</td>
-                    <td><input type="number" class="sheet-number" name="attr_armor_penetration" value="0" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_armor_penetration3" value="0" /></td>
                     <td>Reach</td>
-                    <td><input type="number" class="sheet-number" name="attr_reach" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_reach3" value="" /></td>
                     <td>ST Minimum</td>
-                    <td><input type="number" class="sheet-number" name="attr_minimum" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_minimum3" value="" /></td>
                     <td>Weight</td>
-                    <td><input type="number" class="sheet-number" name="attr_weight" value="" style="width:40px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_weight3" value="" /></td>
                 </tr>
                 <tr>
                     <td>Ammo Type</td>
-                    <td><input type="number" class="sheet-number" name="attr_ammo_type" value="" style="width:70px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_ammo_type3" value="" style="width:90px"  /></td>
                     <td>Ammo Quantity</td>
-                    <td><input type="number" class="sheet-number" name="attr_ammo_quantity" value="" style="width:50px"  /></td>
+                    <td><input type="number" class="sheet-number" name="attr_ammo_quantity3" value="" /></td>
                 </tr>
-                <h4 style="width:50%">Range</h4>
-                <table class="sheet-center">
-                    <tr>
-                        <td>Short (0)</td>
-                        <td><input type="number" class="sheet-number" name="attr_short" value="0" style="width:50px"  /></td>
-                        <td>Medium (-1)</td>
-                        <td><input type="number" class="sheet-number" name="attr_medium" value="0" style="width:50px"  /></td>
-                    </tr>
-                    <tr>
-                        <td>Long (-3)</td>
-                        <td><input type="number" class="sheet-number" name="attr_long" value="0" style="width:50px"  /></td>
-                        <td>Extreme (-6)</td>
-                        <td><input type="number" class="sheet-number" name="attr_extreme" value="0" style="width:50px"  /></td>
-                    </tr>    
+                <tr>
+                    <td>Short Range (0)</td>
+                    <td><input type="number" class="sheet-number" name="attr_short3" value="0" /></td>
+                    <td>Medium Range (-1)</td>
+                    <td><input type="number" class="sheet-number" name="attr_medium3" value="0" /></td>
+                    <td>Long Range (-3)</td>
+                    <td><input type="number" class="sheet-number" name="attr_long3" value="0" /></td>
+                    <td>Extreme Range (-6)</td>
+                    <td><input type="number" class="sheet-number" name="attr_extreme3" value="0" /></td>
+                </tr>     
                 </table>
             </table>
-        </div>
+        </div>        
     </div>
-</div>
 
 <div class="sheet-tab-content sheet-tab4">
     <h3 style="width:98%">Perks</h3>
-    <input type="text" class="sheet-text_center" name="attr_perk_name" placeholder="Perk Name" style="width:90%" />
-    <input type="text" class="sheet-text_center" name="attr_perk_rank" placeholder="Rank" style="width:40px" />
-    <input type="text" class="sheet-text_center" name="attr_perk_level" placeholder="Level" style="width:40px" />
-    <textarea name="attr_perk_text" style="width:100%" ></textarea>
+    <input type="text" class="sheet-text_center" name="attr_perk_name" placeholder="Perk Name" style="width:75%" />
+    <input type="text" class="sheet-text_center" name="attr_perk_rank" placeholder="Rank" style="width:50px" />
+    <input type="text" class="sheet-text_center" name="attr_perk_level" placeholder="Level" style="width:50px" />
+    <textarea name="attr_perk_text" style="width:97%" ></textarea>
     <br>
     <fieldset class="repeating_traits">
-        <input type="text" class="sheet-text_center" name="attr_perk_name-repeating" placeholder="Perk Name" style="width:90%" />
-        <input type="text" class="sheet-text_center" name="attr_perk_rank-repeating" placeholder="Rank" style="width:40px" />
-        <input type="text" class="sheet-text_center" name="attr_perk_level-repeating" placeholder="Level" style="width:40px" />
-        <textarea name="attr_perk_text-repeating" style="width:100%" ></textarea>
+        <input type="text" class="sheet-text_center" name="attr_perk_name-repeating" placeholder="Perk Name" style="width:75%" />
+        <input type="text" class="sheet-text_center" name="attr_perk_rank-repeating" placeholder="Rank" style="width:50px" />
+        <input type="text" class="sheet-text_center" name="attr_perk_level-repeating" placeholder="Level" style="width:50px" />
+        <textarea name="attr_perk_text-repeating" style="width:97%" ></textarea>
     </fieldset>
 </div>
 <div class="sheet-tab-content sheet-tab5">
-    <table class="sheet-center" style="width:98%">
+    <table class="sheet-center" style="width:100%">
         <tr>
             <td>Caps</td>
             <td><input type="number" class="sheet-number" name="attr_caps" value="0" style="width:60%"  /></td>
@@ -926,17 +903,21 @@
             <td>Legion Denarius</td>
             <td><input type="number" class="sheet-number" name="attr_denarius" value="0" style="width:60%"  /></td>
         </tr>
+     <br>
+     <table class="sheet-center" style="width:100%">   
         <tr>
             <td>Item Name</td>
             <td><input type="text" class="sheet-number" name="attr_item_name" placeholder="Name" style="width:90px" /></td>
             <td>Amount</td>
             <td><input type="number" class="sheet-number" name="attr_amount" value="0" style="width:60px"  /></td>
             <td>Weight</td>
-            <td><input type="number" class="sheet-number" name="attr_weight" value="0" style="width:60px"  /></td>
+            <td><input type="number" class="sheet-number" name="attr_item_weight" value="0" style="width:60px"  /></td>
         </tr>
         <tr>
-            <td colspan="6"><textarea name="attr_item_text" style="width:100%" ></textarea></td>
+            <td colspan="6"><textarea name="attr_item_text" style="width:97%" ></textarea></td>
         </tr>
+    </table>
+    <br>    
     </table>
         <br>
     <fieldset class="repeating_traits">
@@ -947,10 +928,10 @@
                 <td>Amount</td>
                 <td><input type="number" class="sheet-number" name="attr_amount" value="0" style="width:60px"  /></td>
                 <td>Weight</td>
-                <td><input type="number" class="sheet-number" name="attr_weight" value="0" style="width:60px"  /></td>
+                <td><input type="number" class="sheet-number" name="attr_item_weight" value="0" style="width:60px"  /></td>
             </tr>
             <tr>
-                <td colspan="6"><textarea name="attr_item_text" style="width:100%" ></textarea></td>
+                <td colspan="6"><textarea name="attr_item_text" style="width:97%" ></textarea></td>
             </tr>
         </table>
         <br>
